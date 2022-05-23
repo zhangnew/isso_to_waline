@@ -23,3 +23,11 @@ python3 dump_comments_to_waline.py > comments.json
 ## 限制
 
 isso 只支持二级回复，所以导出评论中的二级回复，回复@的都是一级回复的人(也就是层主)
+
+如果需要完善，可以手动修改数据库 wl_Comment 表，修改点有 2 个字段，三处：
+
+- comment 字段：@ 后面的内容
+- comment 字段：# 后面的内容
+- pid 字段
+
+对应的都改成回复的真实对象。
